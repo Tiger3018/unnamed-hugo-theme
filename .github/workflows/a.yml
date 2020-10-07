@@ -1,0 +1,63 @@
+name: gh-pages CD
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build gh-pages based on theme and exampleSite file.
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: 'true'
+    - name: Install hugo v0.75
+      run: |
+        curl -L https://github.com/gohugoio/hugo/releases/download/v0.75.1/hugo_extended_0.75.1_Linux-64bit.deb -o hugo.deb
+        sudo dpkg -i hugo.deb
+    - name: Gen directory & page
+      run: |
+        sitefile="exampleSite"
+        themename="plain"
+
+        mkdir -p workplace/themes/$themename
+        cp -R -f $sitefile/* workplace
+        for file in `ls`; do
+          if [ $file == $sitefile ] || [ $file == workplace ]; then
+            continue;
+          fi;
+          cp -R -f $file workplace/themes/$themename
+        done;
+
+        cd workplace
+        hugo --debug -t $themename
+    - uses: actions/upload-artifact@v2
+      with:
+        name: public-page
+        path: ./workplace/public
+
+  deploy:
+    name: Deploy gh-pages
+    needs: build
+    runs-on: ubuntu-latest
+    env:
+      GIT_AUTHOR_NAME    : github-actions[bot]
+      GIT_AUTHOR_EMAIL   : 41898282+github-actions[bot]@users.noreply.github.com
+      GIT_COMMITTER_NAME : github-actions[bot]
+      GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+      # https://github.community/t/github-actions-bot-email-address/17204/5
+    steps:
+    - uses: actions/download-artifact@v2
+      with:
+        name: public-page
+    - name: Commit files
+      run: |
+        git init
+        git status
+        git remote add origin https://${{secrets.push_token}}@github.com/$GITHUB_REPOSITORY.git
+        git checkout -b gh-pages
+        git add .
+        git commit -m "gh-pages CD"
+        git push origin gh-pages -f

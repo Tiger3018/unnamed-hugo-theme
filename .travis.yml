@@ -8,7 +8,7 @@ script:
 
 deploy:
   provider: pages
-  skip_cleanup: true
+  cleanup: true
   github_token: $token_push  # Set in the settings page of your repository, as a secure variable
   local_dir: workplace/public
   on:
