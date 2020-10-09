@@ -1,8 +1,10 @@
 #! /usr/bin/env bash
-
-sitefile="exampleSite"
+# This file is used to review the theme locally.
+# PLEASE CHANGE .github\workflows\a.yml IF YOU WANT TO CHANGE VARIBLES BELOW
+sitefile="eSite-custom"
 themename="plain"
 
+rm -rf workplace
 mkdir -p workplace/themes/$themename
 cp -R -f $sitefile/* workplace
 for file in `ls`; do

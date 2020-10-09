@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}">
-{{- partial "head.html" . -}}
-  <body>
-    <header>
-{{- partial "header.html" . -}}
-    </header>
-    <main>
-      {{/* for */}}
+{{ define "titlePlace" }}
+        <section id="welcome" class="section">
+        </section>
+        <section id="intro" class="section">
+            <div class="text-align-right">
+              <h1></h1>
+              <h3></h3>
+            </div>
+            <div class="">
+              <p>文字部分</p>
+              <p>The tranquil setting was perfect for practicing my yoga!</p>
+            </div>
+        </section>
+{{ end }}
+{{ define "readPlace" }}
+        {{- range .Site.Data.homepage.section }}
+        {{- end }}
 
-    </main>
-    <footer>
-{{- partial "footer.html" . -}}
-    </footer>
-  </body>
-</html>
+{{ end }}
