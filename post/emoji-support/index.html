@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hugo Themes - Emoji Support</title>
+    <link rel="stylesheet" href="https://tiger3018.github.io/unnamed-hugo-theme/css/plain.css">
+    <link rel="icon" href="">
+    <link rel="alternate" type="application/rss+xml" href="index.xml">
+    <link rel="alternate" type="application/rss+xml" href="../../sitemap.xml">
+    <base href="https://tiger3018.github.io/unnamed-hugo-theme" target="_blank">
+  
+    <meta property="og:site_name" content="">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="">
+  </head>
+  <body>
+    <header class="header fixed-top w-100 bg-light shadow-sm" id="header">
+      <nav class="navbar navbar-expand-lg container-md">
+        <div class="container-fluid">
+          <a href="../../" class="navbar-brand">
+            
+            <img src="data:image/svg+xml; base64, PHN2ZyB3aWR0aD0iMWVtIiBoZWlnaHQ9IjFlbSIgdmlld0JveD0iMCAwIDE2IDE2IiBjbGFzcz0iYmkgYmktYXBwIiBmaWxsPSJjdXJyZW50Q29sb3IiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTExIDJINWEzIDMgMCAwIDAtMyAzdjZhMyAzIDAgMCAwIDMgM2g2YTMgMyAwIDAgMCAzLTNWNWEzIDMgMCAwIDAtMy0zek01IDFhNCA0IDAgMCAwLTQgNHY2YTQgNCAwIDAgMCA0IDRoNmE0IDQgMCAwIDAgNC00VjVhNCA0IDAgMCAwLTQtNEg1eiIvPg0KPC9zdmc+" alt="LOGO here" height="35px">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navHeader" aria-controls="navHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navHeader">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../../unnamed-hugo-theme/about/"> About </a>
+              </li>
+            </ul>
+          </div>
+      </nav>
+    </header>
+    <div style="height: 100px;">
+    </div>
+  <div class="container min-vh-100">
+    <main class="text-wrap text-break">
+      <h2>Emoji Support</h2>
+      <div id="info">
+        <ul></ul>
+      </div>
+      <p>Emoji can be enabled in a Hugo project in a number of ways.</p>
+<p>The <a href="https://gohugo.io/functions/emojify/"><code>emojify</code></a> function can be called directly in templates or <a href="https://gohugo.io/templates/shortcode-templates/#inline-shortcodes">Inline Shortcodes</a>.</p>
+<p>To enable emoji globally, set <code>enableEmoji</code> to <code>true</code> in your site&rsquo;s <a href="https://gohugo.io/getting-started/configuration/">configuration</a> and then you can type emoji shorthand codes directly in content files; e.g.</p>
+<!-- raw HTML omitted -->
+<p>The <a href="http://www.emoji-cheat-sheet.com/">Emoji cheat sheet</a> is a useful reference for emoji shorthand codes.</p>
+<hr>
+<p><strong>N.B.</strong> The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack; e.g.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">.emoji {
+  font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
+}</code></pre></div>
+
+<style>
+.emojify {
+	font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
+	font-size: 2rem;
+	vertical-align: middle;
+}
+@media screen and (max-width:650px) {
+  .nowrap {
+    display: block;
+    margin: 25px 0;
+  }
+}
+</style>
+    </main>
+  </div>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/plain.js"></script>
+    <footer id="footer" class="">
+      <hr>
+      <div class="container">
+        <h3>页面主题</h3>
+        <p></p>
+      </div>
+      <hr class="mb-0">
+    </footer>
+
+  </body>
+</html>
