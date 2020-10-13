@@ -5,11 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ .Site.Title }}{{ with $.Title }} - {{ $.Title }}{{ end }}</title>
-    {{- $sastyle := resources.Get "css/plain.scss" | toCSS -}}
+    {{- $sastyle := resources.Get "css/plain.scss" | toCSS }}
     <link rel="stylesheet" href="{{ $sastyle.Permalink }}"><!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
     <link rel="icon" href="{{ .Site.Params.icon }}">
     <link rel="alternate" type="application/rss+xml" href="index.xml">
     <link rel="alternate" type="application/rss+xml" href="/sitemap.xml">
+    <base href="{{ .Site.BaseURL }}" target="_blank">
   <!-- Facebook Open Graph -->
     <meta property="og:site_name" content="">
     <meta property="og:url" content="">

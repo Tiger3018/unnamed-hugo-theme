@@ -1,0 +1,22 @@
+
+          <div class="row row-cols-3">
+            {{- range .Site.RegularPages }}
+            <div class="col">
+              <div class="card col">
+                <svg class="holder-svg card-img-top" height="180" role="img" focusable="false">
+                  <title>占位符</title>
+                  <rect width="100%" height="100%" fill="#868e96"></rect>
+                  <text x="50%" y="50%" fill="#dee2e6">图片</text>
+                </svg>
+                <div class="card-body ">
+                  <h4 class="card-title">{{ .Title }}</h4>
+                  <p class="card-body">{{ .Description }}</p>
+                  <span class="card-body text-right text-muted ">
+                    <span>2020-10-07</span>
+                  </span>
+                  <a href="{{ .RelPermalink }}" class="stretched-link"></a>
+                </div>
+              </div>
+            </div>
+            {{- end }}
+          </div>

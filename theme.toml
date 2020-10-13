@@ -5,13 +5,15 @@ name = "PLain"
 license = "MIT"
 licenselink = "https://github.com/tiger3018/hugo-theme-plain/blob/master/LICENSE"
 description = "More distinct while keeping plain."
-homepage = "http://example.com/"
+# homepage = "http://example.com/"
 tags = []
 features = []
 min_version = "0.75.0"
 
 [author]
   name = "Tiger3018"
+
+relativeURLs = true
 #  homepage = ""
 
 # If porting an existing theme

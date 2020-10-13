@@ -6,6 +6,7 @@ paginate = 3
 languageCode = "en"
 DefaultContentLanguage = "zh-Hans"
 enableInlineShortcodes = true
+relativeURLs = true #!
 
 [menu]
 

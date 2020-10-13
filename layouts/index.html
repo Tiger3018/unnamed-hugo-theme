@@ -3,8 +3,8 @@
         </section>
         <section id="intro" class="section">
             <div class="text-align-right">
-              <h1></h1>
-              <h3></h3>
+              <h1>一级标题</h1>
+              <h3>三级标题</h3>
             </div>
             <div class="">
               <p>文字部分</p>
@@ -15,5 +15,6 @@
 {{ define "readPlace" }}
         {{- range .Site.Data.homepage.section }}
         {{- end }}
+        {{- partial "homepage/range.html" . }}
 
 {{ end }}
